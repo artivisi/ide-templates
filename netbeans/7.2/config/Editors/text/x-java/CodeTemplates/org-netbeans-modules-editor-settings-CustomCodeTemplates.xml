@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE codetemplates PUBLIC "-//NetBeans//DTD Editor Code Templates settings 1.0//EN" "http://www.netbeans.org/dtds/EditorCodeTemplates-1_0.dtd">
+<codetemplates>
+    <codetemplate abbreviation="jpae" xml:space="preserve">
+        <code><![CDATA[@${en type="javax.persistence.Entity" editable="false"}
+@${tb type="javax.persistence.Table" editable="false"}(name="${cursor}")]]></code>
+        <description><![CDATA[Add JPA Entity Annotation.]]></description>
+    </codetemplate>
+    <codetemplate abbreviation="jpaid" xml:space="preserve">
+        <code><![CDATA[@${id type="javax.persistence.Id" editable="false"}
+@${generated type="javax.persistence.GeneratedValue" editable="false"}(generator="system-uuid")
+@${generator type="org.hibernate.annotations.GenericGenerator" editable="false"}(name="system-uuid", strategy = "uuid2")
+private String id;
+
+${cursor}]]></code>
+        <description><![CDATA[Generate JPA @Id field]]></description>
+    </codetemplate>
+    <codetemplate abbreviation="jpacol" xml:space="preserve">
+        <code><![CDATA[@${generated type="javax.persistence.Column" editable="false"}(name="${column_name}", nullable=${nullable default="false"}, unique=${unique default="false"})
+private ${TYPE} ${varName} ;
+
+${cursor}]]></code>
+        <description><![CDATA[Generate JPA @Column field]]></description>
+    </codetemplate>
+</codetemplates>
