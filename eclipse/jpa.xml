@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+    <template autoinsert="true" context="java" deleted="false" description="Add JPA Entity Annotation" enabled="true" name="jpae">${:import(javax.persistence.Entity,javax.persistence.Table)}
+
+    @Entity @Table(name="${cursor}")
+    </template>
+    
+    <template autoinsert="true" context="java" deleted="false" description="Create Entity @Column" enabled="true" name="jpacol">${:import(javax.persistence.Column)}
+@Column(name="${column_name}", nullable=${nullable}, unique=${unique})
+private ${type} ${variableName};
+
+${cursor}</template>
+
+    <template autoinsert="true" context="java" deleted="false" description="Create @Id variable" enabled="true" name="jpaid">${:import(javax.persistence.Id,javax.persistence.GeneratedValue,org.hibernate.annotations.GenericGenerator)}
+@Id @GeneratedValue(generator="system-uuid")
+@GenericGenerator(name="system-uuid", strategy = "uuid2")
+private String id;
+    </template>
+
+</templates>
