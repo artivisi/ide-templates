@@ -22,4 +22,12 @@ private ${TYPE} ${varName} ;
 ${cursor}]]></code>
         <description><![CDATA[Generate JPA @Column field]]></description>
     </codetemplate>
+    <codetemplate abbreviation="jpamto" xml:space="preserve">
+        <code><![CDATA[@${mto type="javax.persistence.ManyToOne" editable="false"}
+@${jc type="javax.persistence.JoinColumn" editable="false"}(name="${column_name}", nullable=${nullable default="false"})
+private ${TYPE} ${varName} ;
+
+${cursor}]]></code>
+        <description><![CDATA[Generate JPA @ManyToOne field]]></description>
+    </codetemplate>
 </codetemplates>
