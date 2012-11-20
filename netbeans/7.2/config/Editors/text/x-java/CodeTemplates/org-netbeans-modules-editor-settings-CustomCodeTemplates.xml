@@ -30,4 +30,16 @@ private ${TYPE} ${varName} ;
 ${cursor}]]></code>
         <description><![CDATA[Generate JPA @ManyToOne field]]></description>
     </codetemplate>
+    <codetemplate abbreviation="restget" xml:space="preserve">
+        <code><![CDATA[@${rm type="org.springframework.web.bind.annotation.RequestMapping" editable="false"}(value="${url}", method=${method type="org.springframework.web.bind.annotation.RequestMethod" editable="false"}.${requestMethod default="GET"})
+@${rb type="org.springframework.web.bind.annotation.ResponseBody" editable="false"}
+public ${li type="java.util.List"}<${TYPE}> ${namaMethod}(
+        @${rp type="org.springframework.web.bind.annotation.RequestParam" editable="false"}(value="${paramValue}", required = ${required default="false"}) String ${search},
+        ${pg type="org.springframework.data.domain.Pageable" editable="false"} ${pageable},
+        ${hsr type="javax.servlet.http.HttpServletResponse" editable="false"} ${response}    
+    ){
+    ${cursor}
+} ]]></code>
+        <description><![CDATA[Generate findAll]]></description>
+    </codetemplate>
 </codetemplates>
